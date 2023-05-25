@@ -14,15 +14,16 @@ import os
 import glob
 
 # initial parameters
-epochs = 20
+epochs = 10
 lr = 1e-3
-batch_size = 32
+batch_size = 64
+img_dims = (96,96,3)
 
 data = []
 labels = []
 
 # load images shuffled
-image_files = [f for f in glob.glob(r'C:\Users\coolm\OneDrive\Documents\coding\ai project' + "/********/*", recursive=True) if not os.path.isdir(f)]
+image_files = [f for f in glob.glob(r'C:\Users\coolm\OneDrive\Documents\coding\ai project\faces' + "/********/*", recursive=True) if not os.path.isdir(f)]
 random.shuffle(image_files)
 
 # converting images to arrays and labelling the categories
