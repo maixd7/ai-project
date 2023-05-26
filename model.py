@@ -81,8 +81,6 @@ def build(width, height, depth, classes):
         inputShape = (depth, height, width)
         chanDim = 1
     
-    # The axis that should be normalized, after a Conv2D layer with data_format="channels_first", 
-    # set axis=1 in BatchNormalization.
 
     model.add(Conv2D(32, (3,3), padding="same", input_shape=(96, 96, 3)))
     model.add(Activation("relu"))
