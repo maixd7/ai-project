@@ -63,8 +63,8 @@ labels = np.array(labels)
 (trainX, testX, trainY, testY) = train_test_split(data, labels, test_size=0.2,
                                                   random_state=42)
 
-trainY = to_categorical(trainY, num_classes=2) # [[1, 0], [0, 1], [0, 1], ...]
-testY = to_categorical(testY, num_classes=2)
+trainY = to_categorical(trainY, num_classes=9) # [[1, 0], [0, 1], [0, 1], ...]
+testY = to_categorical(testY, num_classes=9)
 
 # augmenting datset 
 aug = ImageDataGenerator(rotation_range=25, width_shift_range=0.1,
