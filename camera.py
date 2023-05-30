@@ -15,6 +15,7 @@ classes = ['anger', 'contempt', 'disgust', 'fear', 'happy', 'neutral', 'sad', 's
 
 img_counter = 0
 
+# The webcam part and drawing the circle around is copied from https://www.youtube.com/watch?v=WOuAI5DhHyU&t=957s&ab_channel=BalajiSrinivasan
 # loop through frames
 while webcam.isOpened():
 
