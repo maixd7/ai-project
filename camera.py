@@ -1,3 +1,4 @@
+#Collaborated on by Michael and Adam
 from keras.preprocessing.image import img_to_array
 from keras.models import load_model
 import numpy as np
@@ -14,7 +15,7 @@ webcam = cv2.VideoCapture(0)
 classes = ['anger', 'contempt', 'disgust', 'fear', 'happy', 'neutral', 'sad', 'surprise']
 
 img_counter = 0
-
+# done by Adam and Michael
 # The webcam part and drawing the circle around is copied from https://www.youtube.com/watch?v=WOuAI5DhHyU&t=957s&ab_channel=BalajiSrinivasan
 # loop through frames
 while webcam.isOpened():
@@ -64,7 +65,7 @@ while webcam.isOpened():
 
     # display output
     cv2.imshow("smile detection", frame)
-
+    # Done by Michael
     # press esc to stop and space to capture
     if label == "happy":
         img_name = "opencv_frame_{}.png".format(img_counter)
