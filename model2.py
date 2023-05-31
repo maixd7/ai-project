@@ -2,6 +2,7 @@ import os
 from keras_preprocessing.image import ImageDataGenerator
 from keras.optimizers import Adam
 from keras_preprocessing.image import img_to_array
+# Done collaboratively by Adam and Michael
 from keras.utils import to_categorical, plot_model
 from keras.models import Sequential
 from keras.layers import BatchNormalization, Conv2D, MaxPooling2D, Activation, Flatten, Dropout, Dense
@@ -20,6 +21,7 @@ ssl._create_default_https_context = ssl._create_unverified_context
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
+# use of tensorflow gpu taken from this video https://www.youtube.com/watch?v=EmZZsy7Ym-4&ab_channel=DerekBanas
 import tensorflow as tf
 from tensorflow import keras
 from keras import layers, regularizers
@@ -32,7 +34,7 @@ for gpu in gpus:
     tf.config.experimental.set_memory_growth(gpu, True)
 
 
-
+# image loading and resizing done by adam
 # initial parameters
 data = []
 labels = []
@@ -60,6 +62,7 @@ labels = label_encoder.fit_transform(labels)
 data = np.array(data, dtype="float32") / 255.0
 labels = np.array(labels)
 
+# model done by michael and regularization by tutorial https://www.youtube.com/watch?v=JEWzWv1fBFQ&ab_channel=JeffHeaton
 def my_model():
     inputs = keras.Input(shape=(32, 32, 3))
     x = layers.Conv2D(32, 3, padding="same", kernel_regularizer=regularizers.l2(0.01),)(inputs)
